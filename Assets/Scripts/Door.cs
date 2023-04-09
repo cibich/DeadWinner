@@ -7,11 +7,6 @@ public class Door : MonoBehaviour
     [SerializeField] private int _keyCount;
     [SerializeField] private int _nextLvl;
 
-    private void Start()
-    {
-        _doorCollider.isTrigger= false;
-    }
-
     public void OpenDoor()
     {
         _keyCount++;

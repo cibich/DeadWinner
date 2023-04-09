@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject _deathPrefab;
     [SerializeField] private GameObject _raftPrefab;
+    [SerializeField] private GameObject _flyBabblePrefab;
 
     [SerializeField] private Door _door;
 
@@ -72,6 +73,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Raft"))
         {
             _isOnGround = true;
+        }
+
+        if (collision.gameObject.CompareTag("Babble"))
+        {
+            Instantiate(_flyBabblePrefab, transform.position, Quaternion.identity);
+            transform.position=_startPosition;
+        }
+
+        if (collision.gameObject.CompareTag("FlyBabble"))
+        {
+            JumpSpring(true);
         }
     }
 
