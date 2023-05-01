@@ -4,6 +4,7 @@ public class DragonShot : MonoBehaviour
 {
     [SerializeField] private GameObject _babblePrefab;
     [SerializeField] private Transform _shotPoint;
+    [SerializeField] private Animator _anim;
 
     private void Start()
     {
